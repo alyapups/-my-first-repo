@@ -1,1 +1,1 @@
-"This is a conflict branch"
+"This is a conflict branch" больше нет
