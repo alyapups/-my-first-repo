@@ -1,72 +1,40 @@
+
+//Даны два натуральных числа
+//n
+//,
+//m
+// (вводятся с клавиатуры). Вывести все их общие делители.
 #include <iostream>
+#include <cmath>
 
-
+// TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 int main() {
     using std::cout;
     using std::cin;
-    int n, k, t, l;
-    int b = 0;
-    cout << "enter primary sum, price for bread, times of going before going for money b4 visiting grandma, price for ice cream";
-    cin >> n >> k >> t >> l;
-    int tt = t;
-    if (n == 0)
-        cout << "grandma gets flowers and that s it";
-
-    else if (n >= k) {
-    cout << "bread is bought the amount of money left is " << n - k;
-    b=1;
+    using std::endl;
+    int a,b;
+    cout << "enter two numbers";
+    cin >> a >> b;
+    //находим нод методом евклида
+    while(a!=0 && b!=0){
+        if(a>=b)
+            a=a%b;
+        else
+            b=b%a;
     }
-    else {
-        if (t == 0) {
-            if (n > l) {
-                n -= l;
-                cout << "grandma gets ice cream and boy goes back to the track";
-            }
-            else if (n == l) {
-                cout << "grandma gets ice cream and it ll never be enough for bread";
-            }
-            else {
-                cout << "grandma gets flowers and boy goes back to the track";
-            }
-        }
-        else if (t > 0) {
-            int zero = 0;
-            if (tt % 2 == 0) {
-                tt += 1;
-                zero += 1;
-            }
-            while (tt > zero && n < k) {
-                n *= ((tt % 2) + 2);
-                tt--;
-            }
-            if (n >= k) {
-                b = 1;
-                cout << "bread is bought, money left - " << n - k;
-            }
-            else if (tt == zero) {
-                if ((n > l)) {
-                    n -= l;
-                    cout << "grandma gets ice cream and boy goes back to the track";
-                } else if ((n == l)) {
-                    n -= l;
-                    cout << "grandma gets ice cream and it ll never be enough for bread";
-                } else {
-                    cout << "grandma gets flowers and boy goes back";
-                }
-            }
-        }
-        if (b == 0 && n != 0) {
-            if ((t%2==0))
-                tt = 2147483647;
-            else
-                tt = 2147483646;
-            while (n < k) {
-                n *= ((tt % 2) + 2);
-                tt--;
-            }
-            cout << "THE AMOUNT LEFT - " << n - k;
-        }
+    int sum=a+b;
+    int sq=sqrt(sum);
+    for(int i =1; i <= sq; i++){
+        if(sum%i==0)
+            cout << i << " ";
     }
+    cout << sum << endl;
 
     return 0;
 }
+
+// TIP See CLion help at <a
+// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
+//  Also, you can try interactive lessons for CLion by selecting
+//  'Help | Learn IDE Features' from the main menu.
