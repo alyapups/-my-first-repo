@@ -1,38 +1,26 @@
-//календарь
-
 #include <iostream>
+#include <iomanip>
+using namespace std;
 
 int main() {
-    using std::cout;
-    using std::cin;
-    using std::endl;
     int n, k;
-    cout << "enter n - the day of the week of the 1st, k - the amount of days" << endl;
     cin >> n >> k;
-    if (n < 1 || n > 7 || k < 1 || k>99 || n>k) {
-        cout << "invalid data";
-        return 0;
-    }
 
-    for (int i = 1; i < n;i++) {
-        cout << "   ";
-    }
+    bool first = true;          
+    for (int d = 1; d <= k; d++) {
+        int col = (n + d - 2) % 7;   
 
-    for (int i = 1; i <= k; i++) {
-        if (i < 10)
-            cout << " ";
-        cout << i;
-        if (n == 7) {
-            cout << endl;
-            n = 1;
+        if (first) {
+            cout << string(col * 3, ' '); 
+            first = false;
         }
-        else {
-            cout << " ";
-            n += 1;
+        else if (col != 0) {
+            cout << ' ';                  
         }
-    }
-    if (n != 1) {
-        cout << endl;
+
+        cout << setw(2) << d;             
+
+        if (col == 6 || d == k) cout << '\n'; 
     }
     return 0;
 }
