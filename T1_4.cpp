@@ -10,6 +10,10 @@ int main() {
     int N;
     cout << " enter N ";
     cin>> N;
+    if(N<100000||N>999999){
+        cout << "error - your n is not exactry 6 digits";
+        return 1;
+    }
     int s1=0;
     int s2=0;
     for(int i =0; i<3;i++){
