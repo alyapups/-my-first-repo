@@ -1,34 +1,30 @@
-
-//Даны два натуральных числа
-//n
-//,
-//m
-// (вводятся с клавиатуры). Вывести все их общие делители.
 #include <iostream>
 #include <cmath>
 
-int main() {
-    
-    using std::cout;
-    using std::cin;
-    using std::endl;
-    int a, b;
-    cout << "enter two numbers";
-    cin >> a >> b;
-    while (a != 0 && b != 0) {
-        if (a >= b)
-            a = a % b;
-        else
-            b = b % a;
-    }
-    int sum = a + b;
-    int sq = sqrt(sum);
-    for (int i = 1; i <= sq; i++) {
-        if (sum % i == 0)
-            cout << i << " ";
-    }
-    if (sum != 1)
-        cout << sum << endl;
+using namespace std;
 
+int main()
+{
+    int n, m = 0;
+    cout << "Enter two numbers" << endl;
+    cin >> n >> m;
+    while (n && m) {
+        if (n > m) {
+            n %= m;
+        }
+        else {
+            m %= n;
+        }
+    }
+    int r = m + n; //NOD
+    int sqr = sqrt(r);
+
+    cout << "Common deviders" << endl;
+    for (int i = 1; i <= sqr; i++) {
+        if (r % i == 0) {
+            cout << i << " " << r / i << " ";
+        }
+    }
+    
     return 0;
 }
