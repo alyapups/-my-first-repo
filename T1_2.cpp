@@ -12,6 +12,10 @@ int main() {
     int N;
     cout << "enter N ";
     cin>>N;
+    if(N<0){
+        cout << "error";
+        return 1;
+    }
     int sum=N*N;
     cout << sum << endl;
 
