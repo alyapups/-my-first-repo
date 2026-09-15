@@ -1,29 +1,21 @@
-﻿/*Напечатать первые 
-n
- чисел Фибоначчи. Число 
-n
- вводится с клавиатуры
-.*/
 #include <iostream>
-int F(int n) {
-    if (n == 0)
-        return 0;
-    else if (n == 1)
-        return 1;
-    else
-        return F(n - 1) + F(n - 2);
-}
+
+using namespace std;
 
 int main()
 {
-    using std::cout;
-    using std::cin;
-    using std::endl;
-    int N;
-    cout << "Enter N";
-    cin >> N;
-    for (int i = 0; i < N; i++) {
-        cout << F(i) << endl;
-    }
+    int n = 0;
+    cin >> n;
 
+    int pr = 0;
+    int next = 1;
+    int x;
+    cout << pr << " ";
+    for (int i = 0; i < n; i++) {
+        cout << next << " ";
+        x = pr;
+        pr = next;
+        next = next + x;
+    }
+    return 0;
 }
