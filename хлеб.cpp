@@ -9,13 +9,13 @@ int main() {
     cout << "enter primary sum, price for bread, times of going before going for money b4 visiting grandma, price for ice cream";
     cin >> n >> k >> t >> l;
     int tt = t;
-    if (n == 0)
-        cout << "grandma gets flowers and that s it";
-
-    else if (n >= k) {
-    cout << "bread is bought the amount of money left is " << n - k;
-    b=1;
+    if (n >= k) {
+        cout << "bread is bought the amount of money left is " << n - k;
+        b=1;
     }
+
+    else if (n == 0)
+        cout << "grandma gets flowers and that s it";
     else {
         if (t == 0) {
             if (n > l) {
