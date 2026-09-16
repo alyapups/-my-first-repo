@@ -1,3 +1,6 @@
+//Напечатать первые 
+n
+ чисел Фибоначчи
 #include <iostream>
 
 using namespace std;
